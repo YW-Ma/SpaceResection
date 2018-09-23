@@ -36,9 +36,26 @@ R(3,2)=-sin(Phi)*sin(Kappa)+cos(Phi)*sin(Omega)*cos(Kappa);
 R(3,3)=cos(Phi)*cos(Omega);
 
 %4.calculate Lx Ly (error values)
+%4.1 initialize assistant values X_,Y_ Z_
+temp = inv(R)*
+X_=
+Y_=
+Z_=
+%4.2 calculate A matrix.
+A=zeros(2,6);
+A(1,1)=
+A(1,2)=
+A(1,3)=
+A(1,4)=
+A(1,5)=
+A(1,6)=
 
-%4.1 calculate A matrix.
-
+A(2,1)=
+A(2,2)=
+A(2,3)=
+A(2,4)=
+A(2,5)=
+A(2,6)=
 
 
 

@@ -13,4 +13,5 @@ focus(mm)
 x0(mm)
 y0(mm)
 
-Additionally, a *.m file is also available.
+Additionally, a MATLAB Program is available as a test.
+Notice: elements of exterior orientation is coordinate to the Chinese standard(Phi,Omega,Kappa), NOT WESTERN STANDARD(Omega,Phi,Kappa)!!!
