@@ -38,6 +38,7 @@ R(3,3)=cos(Phi)*cos(Omega);
 %4.calculate Lx Ly (error values)
 
 %4.1 calculate A matrix.
+A1 = getMatrixA(gPts(1,1),gPts(1,2),gPts(1,3),imgPts(1,1),imgPts(1,2),Xs,Ys,Zs,R,fk,x0,y0,Phi,Omega,Kappa);
 
 
 
