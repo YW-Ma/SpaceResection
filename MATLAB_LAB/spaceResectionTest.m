@@ -57,7 +57,7 @@ while loop<=10000
         X_=XYZ_(1);
         Y_=XYZ_(2);
         Z_=XYZ_(3);
-        %4.2 V=Ax-(L-L0);L0=A*X0+d
+        %4.2 
         %L0=[xl,yl]'=[-f*X_/Z_,-f*Y_/Z_]';
         L0=[-fk*X_/Z_,-fk*Y_/Z_]';
         L(2*i-1:2*i,:)=imgPts(i,:)'-L0; % strange, why so big?

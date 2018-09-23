@@ -1,0 +1,12 @@
+getMatrixA.obj
+getMatrixA_emxAPI.obj
+getMatrixA_emxutil.obj
+getMatrixA_initialize.obj
+getMatrixA_terminate.obj
+mldivide.obj
+rtGetInf.obj
+rtGetNaN.obj
+rt_nonfinite.obj
+xgeqp3.obj
+xnrm2.obj
+xscal.obj
