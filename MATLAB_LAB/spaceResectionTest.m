@@ -52,9 +52,13 @@ while loop<=10000
     L=zeros(2*nPts,1);
     for i=1:nPts
         %4.1 calculate A matrix.
-        A(2*i-1:2*i,:) = getMatrixA(gPts(i,1),gPts(i,2),gPts(i,3),imgPts(i,1),imgPts(i,2),R,fk,x0,y0,X0);
+        [A(2*i-1:2*i,:),XYZ_] = getMatrixA(gPts(i,1),gPts(i,2),gPts(i,3),imgPts(i,1),imgPts(i,2),R,fk,x0,y0,X0);
+        X_=XYZ_(1);
+        Y_=XYZ_(2);
+        Z_=XYZ_(3);
         %4.2 V=Ax-(L-L0);L0=A*X0+d
-        L0=A(2*i-1:2*i,:)*X0;
+        %L0=[xl,yl]'=[-f*X_/Z_,-f*Y_/Z_]';
+        L0=[-fk*X_/Z_,-fk*Y_/Z_]';
         L(2*i-1:2*i,:)=imgPts(i,:)'-L0; % strange, why so big?
     end
     %5. V=AX-L; X=inv(A'A)A'L

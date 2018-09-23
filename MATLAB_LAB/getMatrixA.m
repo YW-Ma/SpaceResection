@@ -1,4 +1,4 @@
-function [A] = getMatrixA(X,Y,Z,x,y,R,fk,x0,y0,X0)
+function [A,XYZ_] = getMatrixA(X,Y,Z,x,y,R,fk,x0,y0,X0)
 %(X,Y,Z)->gPts;(x,y)->imgPts;
 %1.initialize assistant values X_,Y_ Z_
 Xs=X0(1);
@@ -8,10 +8,10 @@ Phi=X0(4);
 Omega=X0(5);
 Kappa=X0(6);
 
-temp=R\[X-Xs,Y-Ys,Z-Zs]';
-X_=temp(1);
-Y_=temp(2);
-Z_=temp(3);
+XYZ_=R\[X-Xs,Y-Ys,Z-Zs]';
+X_=XYZ_(1);
+Y_=XYZ_(2);
+Z_=XYZ_(3);
 %2.calculate Marix A [only exterior orientation elements is needed. 
 %                     So size of A is (2,6) instead of (2,9)]
 A=zeros(2,6);
