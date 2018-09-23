@@ -1,6 +1,13 @@
-function [A] = getMatrixA(X,Y,Z,x,y,Xs,Ys,Zs,R,fk,x0,y0,Phi,Omega,Kappa)
+function [A] = getMatrixA(X,Y,Z,x,y,R,fk,x0,y0,X0)
 %(X,Y,Z)->gPts;(x,y)->imgPts;
 %1.initialize assistant values X_,Y_ Z_
+Xs=X0(1);
+Ys=X0(2);
+Zs=X0(3);
+Phi=X0(4);
+Omega=X0(5);
+Kappa=X0(6);
+
 temp=R\[X-Xs,Y-Ys,Z-Zs]';
 X_=temp(1);
 Y_=temp(2);
