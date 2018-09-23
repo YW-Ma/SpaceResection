@@ -31,6 +31,7 @@ MARK=zeros(10000,6);
 X0=[Xs,Ys,Zs,Phi,Omega,Kappa]'; % not Delta value!
 loop=1;
 warning off all
+convergence=0;
 while loop<=10000
     Phi=X0(4);
     Omega=X0(5);
@@ -66,10 +67,20 @@ while loop<=10000
     X=(A'*A)\A'*L;
     MARK(loop,:)=X;
     X0=X0+X;
-%     if(abs(L)<10)
-%         break;
-%     end
+    if(abs(L)<0.007)
+        convergence=1;
+        break;
+    end
     loop=loop+1;
+end
+%show result
+if(convergence==1)
+    fprintf('Convergence after %d loops\n',loop);
+    disp(X0);
+    disp(R);
+    plot(MARK(1:loop,1:3));
+else
+    fprintf('Do not achieve Convergence after %d loops\n',loop);
 end
 
 
