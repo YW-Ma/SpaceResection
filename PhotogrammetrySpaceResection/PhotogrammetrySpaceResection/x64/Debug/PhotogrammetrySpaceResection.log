@@ -1,5 +1,4 @@
-﻿  stdafx.cpp
-  PhotogrammetrySpaceResection.cpp
+﻿  PhotogrammetrySpaceResection.cpp
 d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(3): warning C4005: “_CRT_SECURE_NO_WARNINGS”: 宏重定义
   d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(3): note: 命令行参数: 参见前面的“_CRT_SECURE_NO_WARNINGS”定义
 d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(3): warning C4603: “_CRT_SECURE_NO_WARNINGS”: 未定义宏或在预编译头使用后定义发生改变
