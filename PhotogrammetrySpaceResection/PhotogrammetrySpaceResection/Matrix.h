@@ -15,8 +15,10 @@ public:
 	Matrix(int row, int col);//列优先
 	~Matrix();
 	void LUP_inverse(Matrix &invOfA);//LU分解求逆，返回新矩阵的指针
-
-
+	void multiply(Matrix& multiplierB, Matrix& result);//This*B=result
+	void trans();//转置
+	void show();
+	void rand_init(int scale);
 private:
 	//矩阵乘法
 	double * mul(double *A, double *B);

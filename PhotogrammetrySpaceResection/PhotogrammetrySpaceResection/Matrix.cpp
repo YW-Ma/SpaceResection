@@ -8,6 +8,13 @@ Matrix::Matrix(int row, int col)//列优先
 	this->data = new double[row*col];
 	this->row = row;
 	this->col = col;
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			this->data[i*col + j] = 0;
+		}
+	}
 }
 Matrix::~Matrix()
 {
@@ -26,7 +33,66 @@ void Matrix::LUP_inverse(Matrix &invOfA)//LU分解求逆，返回新矩阵的指针
 		return;
 	}
 }
+void Matrix::show()
+{
+	for (int i = 0; i<row; i++)
+	{
+		for (int j = 0; j<col; j++)
+		{
+			std::cout <<data[i*col + j] << " ";
+		}
+		std::cout << std::endl;
+	}
+}
+void Matrix::rand_init(int scale)
+{
+	srand((unsigned)time(0));
+	for (int i = 0; i<row; i++)
+	{
+		for (int j = 0; j<col; j++)
+		{
+			data[i*col + j] = rand() % scale * 0.1;
+		}
+	}
+}
+void Matrix::multiply(Matrix& multiplierB, Matrix& result)//This*B=result
+{
+	if (row != result.row || multiplierB.col != result.col || col != multiplierB.row)
+	{
+		printf("ERROR: Matrix has wrong dimensions\n");
+		return;
+	}
+	for (int i = 0; i < result.row; i++)
+	{
+		for (int j = 0; j < result.col; j++)
+		{
+			for (int k = 0; k < col; k++)
+			{
+				// a第i行*b第j列=r[i][j]
+				result.data[i*result.col + j] += data[i*col + k] * multiplierB.data[k*multiplierB.col + j];
+			}
+		}
+	}
+}
 
+void Matrix::trans()
+{
+	double* tempMatrix = new double[row*col];
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			tempMatrix[j*row + i] = data[i*col + j];
+		}
+	}
+	memcpy(data, tempMatrix, sizeof(double)*row*col);
+	delete[] tempMatrix;
+	int t = 0;
+	t = col;
+	col = row;
+	row = t;
+	return;
+}
 
 //矩阵乘法
 double * Matrix::mul(double *A, double *B)
