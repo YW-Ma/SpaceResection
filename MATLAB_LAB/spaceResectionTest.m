@@ -4,15 +4,19 @@ clear all;
 controlPts=csvread('controlPoints.txt');
 imgPts=controlPts(:,1:2);%image points
 gPts=controlPts(:,3:5);%ground points
-gPts=gPts.*1000;%use (mm) as unit
+% gPts=gPts.*1000;%use (mm) as unit
+imgPts=imgPts./1000;%use meter as unit
 nPts=size(gPts);
 nPts=nPts(1);
 
 interOrient=csvread('interiorOrientation.txt');
 scale=csvread('scale.txt');
 fk=interOrient(1);%focus
+fk=fk/1000;%use meter as unit
 x0=interOrient(2);%x0
+x0=x0/1000;
 y0=interOrient(3);%y0
+y0=y0/1000;
 height=scale*fk;%flight height
 
 %to correct imgPts
@@ -33,6 +37,8 @@ X0=[Xs,Ys,Zs,Phi,Omega,Kappa]'; % not Delta value!
 loop=1;
 warning off all
 convergence=0;
+A=zeros(2*nPts,6);
+L=zeros(2*nPts,1);
 while loop<=10000
     Phi=X0(4);
     Omega=X0(5);
@@ -74,10 +80,26 @@ while loop<=10000
     end
     loop=loop+1;
 end
-%show result
+%6.show result
 if(convergence==1)
+	%6.1 accuracy assessment
+    Q=inv(A'*A);
+    V=A*X-L;
+    m0=((V'*V)/(2*nPts-6))^(1/2);
+    M=zeros(6,1);
+    M(1)=(m0^2*Q(1,1)^1/2)^1/2;
+    M(2)=(m0^2*Q(2,2)^1/2)^1/2;
+    M(3)=(m0^2*Q(3,3)^1/2)^1/2;
+    M(4)=(m0^2*Q(4,4)^1/2)^1/2;
+    M(5)=(m0^2*Q(5,5)^1/2)^1/2;
+    M(6)=(m0^2*Q(6,6)^1/2)^1/2;
+    %6.2 display result and accuracy
     fprintf('Convergence after %d loops\n',loop);
+	fprintf('exterior orientation elements:');
     disp(X0);
+	fprintf('accuracy');
+	disp(M);
+	fprintf('rotation Matrix');
     disp(R);
     plot(MARK(1:loop,1:3));
 else
