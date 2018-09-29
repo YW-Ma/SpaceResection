@@ -71,10 +71,10 @@ while loop<=10000
     end
     %5. V=AX-L; X=inv(A'A)A'L
 
-    X=(A'*A)\A'*L;
+    X=(A'*A)\A'*L
     MARK(loop,:)=X;
     X0=X0+X;
-    if(abs(L)<0.007)
+    if(abs(sum(L))<0.00007&&loop>50)
         convergence=1;
         break;
     end

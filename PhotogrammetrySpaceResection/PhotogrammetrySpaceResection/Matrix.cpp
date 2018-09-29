@@ -20,16 +20,16 @@ Matrix::~Matrix()
 {
 	delete[] data;
 }
-void Matrix::LUP_inverse(Matrix &invOfA)//LU分解求逆，返回新矩阵的指针
+void Matrix::LUP_inverse(Matrix& Inv)//LU分解求逆，返回新矩阵的指针
 {
-	if (row != col)
+	if (row != col||Inv.row!=Inv.col||Inv.row!=row)
 	{
 		printf("ERROR: col != row, fail to inverse\n");
 		return ;
 	}
 	else {
 		this->N = this->row;
-		invOfA.data = LUP_solve_inverse(this->data);//需要改进，当前内存泄漏。
+		Inv.data = LUP_solve_inverse(this->data);//需要改进，当前内存泄漏。
 		return;
 	}
 }
@@ -39,9 +39,9 @@ void Matrix::show()
 	{
 		for (int j = 0; j<col; j++)
 		{
-			std::cout <<data[i*col + j] << " ";
+			printf("%.6lf ", data[i*col + j]);
 		}
-		std::cout << std::endl;
+		printf("\n");
 	}
 }
 void Matrix::rand_init(int scale)
@@ -54,6 +54,25 @@ void Matrix::rand_init(int scale)
 			data[i*col + j] = rand() % scale * 0.1;
 		}
 	}
+}
+void Matrix::clone(Matrix& B)
+{
+	if (col != B.col || row != B.row)
+	{
+		printf("ERROR: Cannot clone, Matrix has different dimensions\n");
+		return;
+	}
+	else 
+	{
+		for (int i = 0; i < row; i++)
+		{
+			for (int j = 0; j < col; j++)
+			{
+				B.data[i*col + j] = data[i*col + j];
+			}
+		}
+	}
+	return;
 }
 void Matrix::multiply(Matrix& multiplierB, Matrix& result)//This*B=result
 {
@@ -74,7 +93,57 @@ void Matrix::multiply(Matrix& multiplierB, Matrix& result)//This*B=result
 		}
 	}
 }
-
+void Matrix::add(Matrix& B)
+{
+	if (col != B.col || row != B.row)
+	{
+		printf("ERROR: Cannot add, Matrix has different dimensions\n");
+		return;
+	}
+	else
+	{
+		for (int i = 0; i < row; i++)
+		{
+			for (int j = 0; j < col; j++)
+			{
+				data[i*col + j] = B.data[i*col + j] + data[i*col + j];
+			}
+		}
+	}
+	return;
+}
+void Matrix::minus(Matrix& B)
+{
+	if (col != B.col || row != B.row)
+	{
+		printf("ERROR: Cannot add, Matrix has different dimensions\n");
+		return;
+	}
+	else
+	{
+		for (int i = 0; i < row; i++)
+		{
+			for (int j = 0; j < col; j++)
+			{
+				data[i*col + j] = data[i*col + j] - B.data[i*col + j];
+			}
+		}
+	}
+	return;
+}
+double Matrix::avg()
+{
+	double sum=0;
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			sum += data[i*col + j];
+		}
+	}
+	double avg = sum / (col*row);
+	return avg;
+}
 void Matrix::trans()
 {
 	double* tempMatrix = new double[row*col];
@@ -93,7 +162,16 @@ void Matrix::trans()
 	row = t;
 	return;
 }
-
+void Matrix::set_zero()
+{
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			data[i*col + j] = 0;
+		}
+	}
+}
 //矩阵乘法
 double * Matrix::mul(double *A, double *B)
 {
@@ -109,10 +187,10 @@ double * Matrix::mul(double *A, double *B)
 		}
 	}
 
-	//若绝对值小于10^-10,则置为0（这是我自己定的）
+	//若绝对值小于10^-13,则置为0（这是我自己定的）
 	for (int i = 0; i < N*N; i++)
 	{
-		if (abs(C[i]) < pow(10, -10))
+		if (abs(C[i]) < pow(10, -13))
 		{
 			C[i] = 0;
 		}

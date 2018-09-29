@@ -12,23 +12,27 @@ public:
 private:
 	int N;
 public:
+	//除了乘法，都是原地转换，因为乘法会产生新的大小的矩阵
 	Matrix(int row, int col);//列优先
 	~Matrix();
-	void LUP_inverse(Matrix &invOfA);//LU分解求逆，返回新矩阵的指针
+	void LUP_inverse(Matrix& Inv);//LU分解求逆
 	void multiply(Matrix& multiplierB, Matrix& result);//This*B=result
+	void add(Matrix& B);
+	void minus(Matrix& B);
+
+	double avg();
 	void trans();//转置
 	void show();
 	void rand_init(int scale);
+	void clone(Matrix& B);
+	void set_zero();
 private:
-	//矩阵乘法
-	double * mul(double *A, double *B);
-
 	//LUP分解
 	void LUP_Descomposition(double *A, double *L, double *U, int *P);
-
 	//LUP求解方程
 	double * LUP_Solve(double *L, double *U, int *P, double *b);
-
+	//矩阵乘法
+	double * mul(double *A, double *B);
 	/*****************矩阵原地转置BEGIN********************/
 
 	/* 后继 */
