@@ -87,12 +87,12 @@ if(convergence==1)
     V=A*X-L;
     m0=((V'*V)/(2*nPts-6))^(1/2);
     M=zeros(6,1);
-    M(1)=(m0^2*Q(1,1)^1/2)^1/2;
-    M(2)=(m0^2*Q(2,2)^1/2)^1/2;
-    M(3)=(m0^2*Q(3,3)^1/2)^1/2;
-    M(4)=(m0^2*Q(4,4)^1/2)^1/2;
-    M(5)=(m0^2*Q(5,5)^1/2)^1/2;
-    M(6)=(m0^2*Q(6,6)^1/2)^1/2;
+    M(1)=(m0*Q(1,1)^(1/2));
+    M(2)=(m0*Q(2,2)^(1/2));
+    M(3)=(m0*Q(3,3)^(1/2));
+    M(4)=(m0*Q(4,4)^(1/2));
+    M(5)=(m0*Q(5,5)^(1/2));
+    M(6)=(m0*Q(6,6)^(1/2));
     %6.2 display result and accuracy
     fprintf('Convergence after %d loops\n',loop);
 	fprintf('exterior orientation elements:');
