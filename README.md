@@ -1,4 +1,7 @@
 # SpaceResection
+1.Matrix class(including inverse\multi\add\init\...)
+2.Space Resection(in both c++ and MATLAB version)
+
 Space Resection (surveying&amp;photogrammetry) algorithm
 
 Also has a Matrix class,which contains transposition\inversion\multiplication.
