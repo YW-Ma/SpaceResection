@@ -37,11 +37,12 @@ void Matrix::show()
 {
 	for (int i = 0; i<row; i++)
 	{
+		printf("[ ");
 		for (int j = 0; j<col; j++)
 		{
 			printf("%.6lf ", data[i*col + j]);
 		}
-		printf("\n");
+		printf(" ]\n");
 	}
 }
 void Matrix::rand_init(int scale)
