@@ -27,6 +27,9 @@ imgPts(:,2)=imgPts(:,2)-y0;
 Zs=height;
 Xs=mean(gPts(:,1));
 Ys=mean(gPts(:,2));
+% Zs=0;
+% Xs=0;
+% Ys=0;
 Phi=0;
 Omega=0;
 Kappa=0;
@@ -74,7 +77,7 @@ while loop<=10000
     X=(A'*A)\A'*L
     MARK(loop,:)=X;
     X0=X0+X;
-    if(abs(sum(L))<0.00007&&loop>50)
+    if(abs(sum(X))<0.0000001&&loop>50)
         convergence=1;
         break;
     end
