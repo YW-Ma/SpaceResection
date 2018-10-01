@@ -24,12 +24,12 @@ imgPts(:,1)=imgPts(:,1)-x0;
 imgPts(:,2)=imgPts(:,2)-y0;
 
 %2.initialization elements of exterior orientation
-Zs=height;
-Xs=mean(gPts(:,1));
-Ys=mean(gPts(:,2));
-% Zs=0;
-% Xs=0;
-% Ys=0;
+% Zs=height;
+% Xs=mean(gPts(:,1));
+% Ys=mean(gPts(:,2));
+Zs=0;
+Xs=0;
+Ys=0;
 Phi=0;
 Omega=0;
 Kappa=0;
@@ -104,12 +104,19 @@ if(convergence==1)
 	disp(M);
 	fprintf('rotation Matrix');
     disp(R);
-    plot(MARK(1:loop,1:3));
+%     plot(MARK(1:loop,1:3));
 else
     fprintf('Do not achieve Convergence after %d loops\n',loop);
 end
 
-
+% plot(MARK(1:15,1:3));legend dXs dYs dZs
+% xlabel('Iterations')
+% ylabel('Corrections')
+semilogy(abs(MARK(1:15,1:3)));
+hold on;
+semilogy(abs(a(1:15,1:3)));legend dXs0 dYs0 dZs0 dXs dYs dZs 
+xlabel('Iterations')
+ylabel('Corrections')
 
 
 
