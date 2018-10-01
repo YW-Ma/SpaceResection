@@ -5,11 +5,11 @@ d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresect
   d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(3): note: 将宏添加到预编译头中，而不是在此处定义
   d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(4): note: 使用预编译头
 d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(130): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(241): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(245): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(242): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
 d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(246): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
 d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(247): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
 d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(248): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
 d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(249): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
 d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(250): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+d:\学习\大三上\photo解析摄影测量\空间后方交会作业\spaceresection\photogrammetryspaceresection\photogrammetryspaceresection\photogrammetryspaceresection.cpp(251): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
   PhotogrammetrySpaceResection.vcxproj -> D:\学习\大三上\Photo解析摄影测量\空间后方交会作业\SpaceResection\PhotogrammetrySpaceResection\x64\Debug\PhotogrammetrySpaceResection.exe
