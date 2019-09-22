@@ -1,0 +1,37 @@
+*******************************************************
+If all results is NaN, the notice in the line 118 of RESECTION.cpp may be a solution
+*******************************************************
+Number of iterations2
+MSE(mean square error) of unit weight-nan(ind)pixel
+Para Names,Results,MSE,Unit
+Xs,-nan(ind),-nan(ind), mm
+Ys,-nan(ind),-nan(ind), mm
+Zs,-nan(ind),-nan(ind), mm
+Phi,-nan(ind),-nan(ind), Rad
+Omega,-nan(ind),-nan(ind), Rad
+Kappa,-nan(ind),-nan(ind), Rad
+f,-nan(ind),-nan(ind), pixel
+x0,-nan(ind),-nan(ind), pixel
+y0,-nan(ind),-nan(ind), pixel
+k1,-nan(ind),-nan(ind), (pixel)^(-2)
+k2,-nan(ind),-nan(ind), (pixel)^(-4)
+p1,-nan(ind),-nan(ind), (pixel)^(-1)
+p2,-nan(ind),-nan(ind), (pixel)^(-1)
+*******************************************************
+Pt No.,x-res,y-res,unit is pixel
+111,-nan(ind),-nan(ind)
+112,-nan(ind),-nan(ind)
+113,-nan(ind),-nan(ind)
+114,-nan(ind),-nan(ind)
+115,-nan(ind),-nan(ind)
+116,-nan(ind),-nan(ind)
+117,-nan(ind),-nan(ind)
+118,-nan(ind),-nan(ind)
+119,-nan(ind),-nan(ind)
+1110,-nan(ind),-nan(ind)
+1111,-nan(ind),-nan(ind)
+1112,-nan(ind),-nan(ind)
+1113,-nan(ind),-nan(ind)
+1114,-nan(ind),-nan(ind)
+1115,-nan(ind),-nan(ind)
+1116,-nan(ind),-nan(ind)
