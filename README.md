@@ -39,7 +39,7 @@ Examples
 *  Using the red crosses to mark the image coordinates we computed, we will find that they step closer to the true positions of the control points on the image after each iteration.
 * In the end, there is a set of orientation elements that enale the positions of these red crosses to be very close to the real position and no longer change, which means the orientation elements converge.
 
-[Click me to watch the GIF](https://github.com/YW-Ma/SpaceResection/blob/master/spaceResection-iteration.gif)
+[Click me to watch the GIF](https://raw.githubusercontent.com/YW-Ma/SpaceResection/master/spaceResection-iteration.gif)
 
 
 
