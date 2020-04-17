@@ -164,9 +164,10 @@ while notConverge
 end
 
 if notConverge == false
-    Xi = 7.243;
-    Yi = -1.596;
-    Zi = -8.998;
+    input = [14.451	-6.363	0.364]
+    Xi = -input(2);
+    Yi = input(3);
+    Zi = -input(1);
     R(1, 1) = cos(Phi)*cos(Kappa) - sin(Phi)*sin(Omega)*sin(Kappa);
     R(1, 2) = cos(Omega)*sin(Kappa);
     R(1, 3) = sin(Phi)*cos(Kappa) + cos(Phi)*sin(Omega)*sin(Kappa);
@@ -182,7 +183,7 @@ if notConverge == false
     xi = -f * XR / ZR + x0;
     yi = -f * YR / ZR + y0;
     %draw several point in the photo.
-    img = imread('OcclusionPole040.JPG');
+    img = imread('Occlusion040.JPG');
     x = xi;
     y = yi;
     
