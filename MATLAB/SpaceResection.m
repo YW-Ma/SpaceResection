@@ -3,9 +3,9 @@
 % SpaceResection.mat.
 
 
-order = randperm(12,10);
-controlPts = c2(order,:);
-ImagePts = station2(order,:);
+order = randperm(16,10);
+controlPts = c1(order,:);
+ImagePts = station1(order,:);
 
 %1. INITIALIZE
 f=3540;
@@ -164,7 +164,7 @@ while notConverge
 end
 
 if notConverge == false
-    input = [14.451	-6.363	0.364]
+    input = [14.455	-2.779	0.275]
     Xi = -input(2);
     Yi = input(3);
     Zi = -input(1);
@@ -183,7 +183,7 @@ if notConverge == false
     xi = -f * XR / ZR + x0;
     yi = -f * YR / ZR + y0;
     %draw several point in the photo.
-    img = imread('Occlusion040.JPG');
+    img = imread('Zuo001.JPG');
     x = xi;
     y = yi;
     
@@ -192,7 +192,7 @@ if notConverge == false
     y = floor(1028-y);
     color = [255,0,0];
     length = 25;
-    width = 2;
+    width = 1;
     for c = 1:3
         for w = -width:width
             img(y-length:y+length, x+w, c) = color(c);

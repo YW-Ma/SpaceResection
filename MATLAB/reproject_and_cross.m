@@ -1,5 +1,5 @@
-load good_for_station2_real
-input = [12.262,-8.543,1.085]
+load good_for_station1_test
+input = [14.488,-2.690,0.266];
 Xi = -input(2);
 Yi = input(3);
 Zi = -input(1);
@@ -18,7 +18,7 @@ ZR = R(3, 1)*(Xi - Xs) + R(3, 2)*(Yi - Ys) + R(3, 3)*(Zi - Zs);
 xi = -f * XR / ZR + x0;
 yi = -f * YR / ZR + y0;
 %draw several point in the photo.
-img = imread('Occlusion040.JPG');
+img = imread('Zuo001.JPG');
 x = xi;
 y = yi;
 
@@ -27,7 +27,7 @@ x = floor(x+1544);
 y = floor(1028-y);
 color = [255,0,0];
 length = 25;
-width = 2;
+width = 0;
 for c = 1:3
     for w = -width:width
         img(y-length:y+length, x+w, c) = color(c);
